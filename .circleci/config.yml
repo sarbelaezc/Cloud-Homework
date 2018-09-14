@@ -44,7 +44,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/linked-un.git master
+            git push https://heroku:8559dcee-81cb-4855-9893-2739bc8ca545@git.heroku.com/linked-un.git master
 
 workflows:
   version: 2
