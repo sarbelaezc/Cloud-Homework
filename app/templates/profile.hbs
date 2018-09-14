@@ -1,0 +1,15 @@
+{{#each model.actualStudent as |activeUser|}}
+  <h1>Tu perfil:</h1>
+  <p>Nombre: <input type='text' id="name" value={{activeUser.name}} default></p>
+  <p>Correo: <input type='text' id="email" value={{activeUser.email}} default></p>
+  <p>Identificación: <input type='number' id="idNumber" value={{activeUser.idNumber}}></p>
+  <p>Fecha de nacimiento: <input type='date' id="dateOfBirth" value={{activeUser.dateOfBirth}}></p>
+  <p>Teléfono: <input type='number' id="phone" value={{activeUser.phone}}></p>
+  <p>Facultad: <input type='text' id="faculty" value={{activeUser.faculty}}></p>
+  <p>Carrera: <input type='text' id="career" value={{activeUser.career}}></p>
+  <p>Horario: <input type='text' id="schedule" value={{activeUser.schedule}}></p>
+  <p>Porcentaje de avance: <input type='number' id="percent" value={{activeUser.percent}}></p>
+  <p>Promedio Academico: <input type='number' id="pa" value={{activeUser.pa}}></p>
+  <p>P.A.P.A.: <input type='number' id="papa" value={{activeUser.papa}}></p>
+  <button class="customButton" {{action 'updateProfile'}}> Actualizar </button>
+{{/each}}

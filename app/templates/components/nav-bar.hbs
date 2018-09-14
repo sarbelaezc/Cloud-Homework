@@ -1,0 +1,30 @@
+{{!-- Barra de navegacion superior --}}
+<div class="topnav" id="myTopnav">
+
+  {{#link-to 'index'}} Inicio {{/link-to}}
+  {{!-- <div class="account"> --}}
+    {{#if session.isAuthenticated}}
+      {{#if user.isStudent}}
+        {{#link-to 'profile'}} Perfil {{/link-to}}
+        {{#link-to 'convocatories'}} Convocatorias {{/link-to}}
+      {{else if user.isContractor}}
+        {{#if user.isAdministrative}}
+          {{#link-to 'validate-convocatory'}} Validar Convocatoria {{/link-to}}
+        {{/if}}
+        {{#link-to 'publish-convocatory'}} Publicar Convocatoria {{/link-to}}
+        {{#link-to 'answer-student'}} Responder estudiantes {{/link-to}}
+      {{/if}}
+      <a {{action 'signOut'}} href='login'> Salir </a>
+      {{!-- {{#link-to 'login'}} Salir {{/link-to}} --}}
+    {{else}}
+      {{#link-to 'register'}} Regístrate {{/link-to}}
+      {{#link-to 'login'}} Entrar {{/link-to}}
+    {{/if}}
+  {{!-- </div> --}}
+
+  {{!-- boton opcional que cambia el tipo de barra si la pantalla es muy pequeña --}}
+  <a href="javascript:void(0);" class="icon" {{action 'responsive'}}>&#9776;</a>
+
+</div>
+
+{{yield}}
